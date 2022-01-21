@@ -1,15 +1,12 @@
 package br.com;
 
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-
-import br.com.main.MainScreen;
+import br.com.telas.main.MainScreen;
 
 public class StartApp {
 
 	
 	public static void main(String[] args) {
-		MainScreen mainScreen = new MainScreen("Inicio", 480, 320);
+		MainScreen mainScreen = new MainScreen();
 		
 	}
 	

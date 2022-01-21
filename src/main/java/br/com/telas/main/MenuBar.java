@@ -1,4 +1,4 @@
-package br.com.main;
+package br.com.telas.main;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -19,8 +19,6 @@ public class MenuBar extends JMenuBar {
 		add(menu);		
 		
 		createMenuItems();
-		
-		
 		
 		setVisible(true);
 	}
