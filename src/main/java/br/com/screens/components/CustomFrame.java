@@ -1,4 +1,4 @@
-package br.com.telas;
+package br.com.screens.components;
 
 import java.awt.event.WindowAdapter;
 

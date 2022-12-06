@@ -1,4 +1,4 @@
-package br.com.telas.rendafixa;
+package br.com.screens.fixedincome;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -7,25 +7,24 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 
-import br.com.telas.CustomFrame;
-import br.com.telas.main.MainScreen;
+import br.com.screens.components.CustomFrame;
+import br.com.screens.home.Home;
+import br.com.screens.infrastructure.ScreenPool;
 
 public class MainRendaFixa extends JFrame implements CustomFrame {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
-	private MainScreen mainScreen;
-	public MainRendaFixa(MainScreen mainScreen) {
+	private Home mainScreen;
+	public MainRendaFixa() {
 		// TODO Auto-generated constructor stub
-		this.mainScreen = mainScreen;
-		configure();
+		this.mainScreen = (Home) ScreenPool.getScreen(Home.class.getName());
+		setup();
 	
 	}
 
 	@Override
-	public void configure() {
+	public void setup() {
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int height = (int) (screenSize.getWidth() / 2);

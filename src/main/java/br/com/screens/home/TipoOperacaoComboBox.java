@@ -1,4 +1,4 @@
-package br.com.telas.main;
+package br.com.screens.home;
 
 import javax.swing.JComboBox;
 

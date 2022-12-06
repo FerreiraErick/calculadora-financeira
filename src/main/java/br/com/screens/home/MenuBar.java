@@ -1,4 +1,4 @@
-package br.com.telas.main;
+package br.com.screens.home;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -15,7 +15,7 @@ public class MenuBar extends JMenuBar {
 	
 	public MenuBar() {
 		
-		menu = new JMenu("dummie");
+		menu = new JMenu("Menu");
 		add(menu);		
 		
 		createMenuItems();

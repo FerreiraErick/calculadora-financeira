@@ -1,13 +1,12 @@
 package br.com;
 
-import br.com.telas.main.MainScreen;
+import br.com.screens.home.Home;
 
 public class StartApp {
 
 	
 	public static void main(String[] args) {
-		MainScreen mainScreen = new MainScreen();
-		
+		new Home();
 	}
 	
 }

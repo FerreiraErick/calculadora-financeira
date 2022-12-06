@@ -1,4 +1,4 @@
-package br.com.telas.main;
+package br.com.screens.home;
 
 import java.util.Arrays;
 import java.util.stream.Stream;

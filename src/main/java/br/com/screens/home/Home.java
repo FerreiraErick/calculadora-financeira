@@ -1,4 +1,4 @@
-package br.com.telas.main;
+package br.com.screens.home;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -8,23 +8,20 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import br.com.telas.CustomComponent;
-import br.com.telas.rendafixa.MainRendaFixa;
+import br.com.screens.components.CustomComponent;
+import br.com.screens.fixedincome.MainRendaFixa;
+import br.com.screens.infrastructure.ScreenPool;
 
-public class MainScreen extends JFrame implements CustomComponent {
+public class Home extends JFrame implements CustomComponent {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private TipoOperacaoComboBox tipoOperacaoComboBox;
 	private JButton btnSimular;
-	private MainScreen mainScreen = this;
 
-	public MainScreen() {
+	public Home() {
 
-		configure();
+		setup();
 
 		// menu bar
 		MenuBar menuBar = new MenuBar();
@@ -49,13 +46,14 @@ public class MainScreen extends JFrame implements CustomComponent {
 		add(mainPanel);
 		setVisible(true);
 	}
-	
+
 	@Override
-	public void configure() {
+	public void setup() {
 		setSize(new Dimension(480, 320));
 		setTitle("Simulador Financeiro");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
+		ScreenPool.setScreen(this.getClass().getName(), this);
 	}
 
 	private ActionListener onClickBtnSimular() {
@@ -71,7 +69,7 @@ public class MainScreen extends JFrame implements CustomComponent {
 					break;
 				case JUROS_RENDA_FIXA:
 					setVisible(false);
-					new MainRendaFixa(mainScreen);
+					new MainRendaFixa();
 					break;
 				default:
 					break;
