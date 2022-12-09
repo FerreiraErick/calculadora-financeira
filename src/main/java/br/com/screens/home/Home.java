@@ -73,7 +73,6 @@ public class Home extends JFrame implements CustomComponent {
 					break;
 				default:
 					break;
-
 				}
 			}
 		};

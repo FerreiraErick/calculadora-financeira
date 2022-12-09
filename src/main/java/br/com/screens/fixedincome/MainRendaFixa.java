@@ -13,14 +13,11 @@ import br.com.screens.infrastructure.ScreenPool;
 
 public class MainRendaFixa extends JFrame implements CustomFrame {
 
-	
 	private static final long serialVersionUID = 1L;
 	private Home mainScreen;
 	public MainRendaFixa() {
-		// TODO Auto-generated constructor stub
 		this.mainScreen = (Home) ScreenPool.getScreen(Home.class.getName());
 		setup();
-	
 	}
 
 	@Override

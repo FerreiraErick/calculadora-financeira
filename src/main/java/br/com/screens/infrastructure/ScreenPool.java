@@ -15,5 +15,4 @@ public final class ScreenPool {
 		screenMap.put(screenName, screen);
 	}
 	
-	
 }
