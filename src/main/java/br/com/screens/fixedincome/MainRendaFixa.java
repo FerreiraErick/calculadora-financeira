@@ -14,10 +14,16 @@ import br.com.screens.infrastructure.ScreenPool;
 public class MainRendaFixa extends JFrame implements CustomFrame {
 
 	private static final long serialVersionUID = 1L;
-	private Home mainScreen;
+	
 	public MainRendaFixa() {
-		this.mainScreen = (Home) ScreenPool.getScreen(Home.class.getName());
 		setup();
+		setMainPanel();
+	}
+	
+
+	private void setMainPanel() {
+		new MainLeftPanel(this);
+		new MainRightPanel(this);
 	}
 
 	@Override
@@ -34,6 +40,7 @@ public class MainRendaFixa extends JFrame implements CustomFrame {
 		
 		addWindowListener(windowListener());
 	}
+	
 
 	@Override
 	public WindowAdapter windowListener() {
@@ -42,7 +49,7 @@ public class MainRendaFixa extends JFrame implements CustomFrame {
 		return new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				mainScreen.setVisible(true);
+				ScreenPool.getScreen(Home.class.getName()).setVisible(true);
 			}
 		};
 	}
