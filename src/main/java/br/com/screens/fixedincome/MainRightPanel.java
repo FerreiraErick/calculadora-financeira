@@ -1,6 +1,7 @@
 package br.com.screens.fixedincome;
 
 import java.awt.*;
+import java.io.Serial;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -8,13 +9,14 @@ import javax.swing.border.LineBorder;
 
 public class MainRightPanel extends JPanel{
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 	
-	public MainRightPanel(JFrame mainRendaFixa) {
-		setup(mainRendaFixa);
+	public MainRightPanel(JFrame mainFixedIncome) {
+		setup(mainFixedIncome);
 		setPanelLayout();
 		setBody();
-		mainRendaFixa.add(this);
+		mainFixedIncome.add(this);
 	}
 
 	private void setPanelLayout() {

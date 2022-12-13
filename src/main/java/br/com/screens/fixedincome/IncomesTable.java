@@ -11,7 +11,7 @@ public class IncomesTable extends JTable {
     }
 
     private void setup(JPanel jPanel){
-        setSize((int) (jPanel.getWidth() * (0.9)), (int) (jPanel.getHeight() / 2));
+        setSize((int) (jPanel.getWidth() * (0.9)), (jPanel.getHeight() / 2));
         setBackground(Color.green);
         setVisible(true);
     }
