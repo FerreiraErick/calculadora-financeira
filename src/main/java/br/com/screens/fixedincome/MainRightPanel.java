@@ -1,7 +1,6 @@
 package br.com.screens.fixedincome;
 
-import java.awt.Color;
-import java.awt.GridLayout;
+import java.awt.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,12 +13,16 @@ public class MainRightPanel extends JPanel{
 	public MainRightPanel(JFrame mainRendaFixa) {
 		setup(mainRendaFixa);
 		setPanelLayout();
+		setBody();
 		mainRendaFixa.add(this);
 	}
 
 	private void setPanelLayout() {
-		setLayout(new GridLayout(2, 0));
-		
+		setLayout(new FlowLayout());
+	}
+
+	private void setBody(){
+		new IncomesTable(this);
 	}
 
 	private void setup(JFrame jFrame) {

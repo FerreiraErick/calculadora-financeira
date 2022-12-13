@@ -11,22 +11,20 @@ import br.com.screens.components.CustomFrame;
 import br.com.screens.home.Home;
 import br.com.screens.infrastructure.ScreenPool;
 
-public class MainRendaFixa extends JFrame implements CustomFrame {
+public class MainFixedIncome extends JFrame implements CustomFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	public MainRendaFixa() {
+	public MainFixedIncome() {
 		setup();
 		setMainPanel();
 	}
 	
-
 	private void setMainPanel() {
 		new MainLeftPanel(this);
 		new MainRightPanel(this);
 	}
 
-	@Override
 	public void setup() {
 		
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

@@ -11,6 +11,7 @@ public class MainLeftPanel extends JPanel {
 	
 	public MainLeftPanel(JFrame jFrame) {
 		setup(jFrame);
+		setBody();
 		jFrame.add(this);
 	}
 
@@ -19,6 +20,10 @@ public class MainLeftPanel extends JPanel {
 		setBackground(Color.red);
 		setAlignmentX(JPanel.LEFT_ALIGNMENT);
 		setVisible(true);
+	}
+	
+	private void setBody() {
+		new CalcularButton(this);
 	}
 	
 

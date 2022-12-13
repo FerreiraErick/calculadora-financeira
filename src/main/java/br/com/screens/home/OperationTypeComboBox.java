@@ -2,14 +2,14 @@ package br.com.screens.home;
 
 import javax.swing.JComboBox;
 
-public class TipoOperacaoComboBox extends JComboBox<String>{
+public class OperationTypeComboBox extends JComboBox<String>{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public TipoOperacaoComboBox() {
+	public OperationTypeComboBox() {
 		super(EnumOperacoes.getValuesNames());
 		configure();
 		

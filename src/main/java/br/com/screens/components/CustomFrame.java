@@ -2,7 +2,7 @@ package br.com.screens.components;
 
 import java.awt.event.WindowAdapter;
 
-public interface CustomFrame extends CustomComponent {
+public interface CustomFrame {
 	
 	public WindowAdapter windowListener();
 	

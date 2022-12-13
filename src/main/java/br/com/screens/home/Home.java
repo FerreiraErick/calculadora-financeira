@@ -8,15 +8,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import br.com.screens.components.CustomComponent;
-import br.com.screens.fixedincome.MainRendaFixa;
+import br.com.screens.fixedincome.MainFixedIncome;
 import br.com.screens.infrastructure.ScreenPool;
 
-public class Home extends JFrame implements CustomComponent {
+public class Home extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	private TipoOperacaoComboBox tipoOperacaoComboBox;
+	private OperationTypeComboBox tipoOperacaoComboBox;
 	private JButton btnSimular;
 
 	public Home() {
@@ -27,7 +26,7 @@ public class Home extends JFrame implements CustomComponent {
 		MenuBar menuBar = new MenuBar();
 		setJMenuBar(menuBar);
 
-		tipoOperacaoComboBox = new TipoOperacaoComboBox();
+		tipoOperacaoComboBox = new OperationTypeComboBox();
 		tipoOperacaoComboBox.setBounds(150, 100, 200, 20);
 		tipoOperacaoComboBox.setAlignmentX(CENTER_ALIGNMENT);
 
@@ -47,7 +46,6 @@ public class Home extends JFrame implements CustomComponent {
 		setVisible(true);
 	}
 
-	@Override
 	public void setup() {
 		setSize(new Dimension(480, 320));
 		setTitle("Simulador Financeiro");
@@ -69,7 +67,7 @@ public class Home extends JFrame implements CustomComponent {
 					break;
 				case JUROS_RENDA_FIXA:
 					setVisible(false);
-					new MainRendaFixa();
+					new MainFixedIncome();
 					break;
 				default:
 					break;
