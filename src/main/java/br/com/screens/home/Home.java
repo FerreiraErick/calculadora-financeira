@@ -3,6 +3,7 @@ package br.com.screens.home;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -55,22 +56,17 @@ public class Home extends JFrame {
 	}
 
 	private ActionListener onClickBtnSimular() {
-		return new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		return e -> {
 
-				String tipoOperacao = tipoOperacaoComboBox.getSelectedItem().toString();
+			String tipoOperacao = Objects.requireNonNull(tipoOperacaoComboBox.getSelectedItem()).toString();
 
-				switch (EnumOperacoes.getEnumByName(tipoOperacao)) {
-				case FINACIAMENTO_IMOBILIARIO:
-					System.out.println("Financiamento imobiliario");
-					break;
-				case JUROS_RENDA_FIXA:
+			switch (EnumOperacoes.getEnumByName(tipoOperacao)) {
+				case FINACIAMENTO_IMOBILIARIO -> System.out.println("Financiamento imobiliario");
+				case JUROS_RENDA_FIXA -> {
 					setVisible(false);
 					new MainFixedIncome();
-					break;
-				default:
-					break;
+				}
+				default -> {
 				}
 			}
 		};

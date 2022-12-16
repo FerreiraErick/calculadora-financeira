@@ -1,13 +1,10 @@
 package br.com.screens.fixedincome;
 
-import java.awt.Color;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class MainLeftPanel extends JPanel {
-
-	private static final long serialVersionUID = 1L;
 	
 	public MainLeftPanel(JFrame jFrame) {
 		setup(jFrame);
@@ -16,15 +13,12 @@ public class MainLeftPanel extends JPanel {
 	}
 
 	private void setup(JFrame jFrame) {
-		setSize((int) Math.round(jFrame.getWidth() * 0.32), jFrame.getHeight());
-		setBackground(Color.red);
-		setAlignmentX(JPanel.LEFT_ALIGNMENT);
+		setSize((int) Math.round(jFrame.getWidth() * 0.45), jFrame.getHeight());
 		setVisible(true);
 	}
 	
 	private void setBody() {
-		new CalcularButton(this);
+		new FieldTaxesPanel(this);
 	}
-	
 
 }

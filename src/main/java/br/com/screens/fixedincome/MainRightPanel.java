@@ -28,10 +28,8 @@ public class MainRightPanel extends JPanel{
 	}
 
 	private void setup(JFrame jFrame) {
-		setBorder(new LineBorder(Color.black));
 		setLayout(new GridLayout(2, 0));
 		setSize((int) Math.round(jFrame.getWidth() * 0.67), jFrame.getHeight());
-		setBackground(Color.blue);
 		setAlignmentX(JPanel.RIGHT_ALIGNMENT);
 		setVisible(true);
 	}

@@ -1,17 +1,16 @@
 package br.com.screens.fixedincome;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class CalcularButton extends JButton {
-	private static final long serialVersionUID = 1L;
-	public CalcularButton(JPanel jframe) {
+
+	public CalcularButton(JPanel jFrame) {
 		super("Calcular");
-		setup(jframe);
-		jframe.add(this);
+		setup(jFrame);
+		jFrame.add(this);
 	}
 
-	private void setup(JPanel jframe) {
+	private void setup(JPanel jFrame) {
 		setVisible(true);
 	}
 }
