@@ -3,12 +3,12 @@ package br.com.screens.components;
 import javax.swing.*;
 import java.awt.*;
 
-public class TextFieldWithLabel extends JPanel implements GetFieldContent<String>{
+public class FloatFieldWithLabel extends JPanel implements GetFieldContent<Float>{
 
     private JLabel label;
     private JTextField textField;
 
-    public TextFieldWithLabel(int fieldSize, String labelName) {
+    public FloatFieldWithLabel(int fieldSize, String labelName) {
         GridLayout gridLayout = new GridLayout(1,2);
         gridLayout.setHgap(10);
         setLayout(gridLayout);
@@ -26,7 +26,13 @@ public class TextFieldWithLabel extends JPanel implements GetFieldContent<String
     }
 
     @Override
-    public String getFieldContent() {
-        return textField.getText();
+    public Float getFieldContent() {
+        try{
+            return Float.parseFloat(textField.getText());
+        }catch (NumberFormatException exception){
+            exception.printStackTrace();
+            throw new IllegalArgumentException("Argumento informado não é um numero valido");
+        }
     }
+
 }
