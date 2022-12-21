@@ -2,49 +2,50 @@ package br.com.domains;
 
 public class RowData {
 
-    private Integer investingTime;
-    private Double accumulatedAmount;
-    private Double taxesAmount;
-    private Double grossValue;
-    private Double netValue;
+    private Integer row;
+    private Float taxesAmount;
+    private Float grossValue;
+    private Float netValue;
 
-    public Integer getInvestingTime() {
-        return investingTime;
-    }
-
-    public void setInvestingTime(Integer investingTime) {
-        this.investingTime = investingTime;
-    }
-
-    public Double getAccumulatedAmount() {
-        return accumulatedAmount;
-    }
-
-    public void setAccumulatedAmount(Double accumulatedAmount) {
-        this.accumulatedAmount = accumulatedAmount;
-    }
-
-    public Double getTaxesAmount() {
+    public Float getTaxesAmount() {
         return taxesAmount;
     }
 
-    public void setTaxesAmount(Double taxesAmount) {
+    public void setTaxesAmount(Float taxesAmount) {
         this.taxesAmount = taxesAmount;
     }
 
-    public Double getGrossValue() {
+    public Float getGrossValue() {
         return grossValue;
     }
 
-    public void setGrossValue(Double grossValue) {
+    public void setGrossValue(Float grossValue) {
         this.grossValue = grossValue;
     }
 
-    public Double getNetValue() {
+    public Float getNetValue() {
         return netValue;
     }
 
-    public void setNetValue(Double netValue) {
+    public void setNetValue(Float netValue) {
         this.netValue = netValue;
+    }
+
+    public Integer getRow() {
+        return row;
+    }
+
+    public void setRow(Integer row) {
+        this.row = row;
+    }
+
+    @Override
+    public String toString() {
+        return "RowData{" +
+                "row=" + row +
+                ", taxesAmount=" + taxesAmount +
+                ", grossValue=" + grossValue +
+                ", netValue=" + netValue +
+                '}';
     }
 }

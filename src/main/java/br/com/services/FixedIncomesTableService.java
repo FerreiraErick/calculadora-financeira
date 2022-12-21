@@ -1,39 +1,52 @@
+
 /*
- * Copyright (c) 2022. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
+ * Erick Victor Ferreira
+ * São Paulo, 21/12/2022 12:01
  */
 
 package br.com.services;
 
 import br.com.domains.IncomeCalculateParameters;
-import br.com.domains.TimeUnitEnum;
+import br.com.domains.RowData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FixedIncomesTableService {
 
-    public void calculate(IncomeCalculateParameters incomeCalculateParameters){
+    public List<RowData> calculate(IncomeCalculateParameters incomeCalculateParameters){
 
         var investingTime = incomeCalculateParameters.getInvestingTime();
-        var timeUnit = incomeCalculateParameters.getTimeUnit();
-        var incomeTax = getIncomeTax(incomeCalculateParameters, timeUnit);
+        var incomeTax = incomeCalculateParameters.getPercentIncomeTax();
         var amount = incomeCalculateParameters.getStartAmount();
 
+        var rowDataList = new ArrayList<RowData>();
+
         for(int n = 1; n <= investingTime; n++){
-            System.out.println(compoundInterests(amount, incomeTax, n));
-            amount+=(incomeCalculateParameters.getMonthlyAmount() * (1%n));
+
+            var rowData = new RowData();
+
+            rowData.setRow(n);
+            rowData.setGrossValue(compoundInterests(amount, incomeTax, n));
+            rowData.setTaxesAmount(incomeCalculateParameters.getDiscountTaxes());
+            rowData.setNetValue(applyTaxes(rowData.getGrossValue(), incomeCalculateParameters));
+            amount+=incomeCalculateParameters.getMonthlyAmount();
+
+            rowDataList.add(rowData);
+
         }
 
+        return rowDataList;
+    }
+
+    private Float applyTaxes(Float amount, IncomeCalculateParameters incomeCalculateParameters) {
+        return amount - (amount * incomeCalculateParameters.getPercentDiscountFee());
     }
 
     private Float compoundInterests(Float amount, Float incomeTax,int n) {
-        return Double.valueOf(amount * Math.pow((1 + incomeTax), n)).floatValue();
+        Float C = (float) Math.pow((1 + incomeTax), n);
+        return amount * C;
     }
 
-    private static Float getIncomeTax(IncomeCalculateParameters incomeCalculateParameters, TimeUnitEnum timeUnit) {
-        return timeUnit == TimeUnitEnum.YEARLY ?
-                incomeCalculateParameters.getIncomeTax() : (incomeCalculateParameters.getIncomeTax() / 12);
-    }
 
 }

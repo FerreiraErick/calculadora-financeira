@@ -57,4 +57,12 @@ public class IncomeCalculateParameters {
     public void setInvestingTime(Integer investingTime) {
         this.investingTime = investingTime;
     }
+
+    public Float getPercentIncomeTax(){
+        return ((timeUnit == TimeUnitEnum.YEARLY ? incomeTax : (incomeTax / 12)) / 100);
+    }
+
+    public Float getPercentDiscountFee(){
+        return ((timeUnit == TimeUnitEnum.YEARLY ? discountTaxes : (discountTaxes / 12)) / 100);
+    }
 }

@@ -11,14 +11,16 @@ public class FixedIncomesTableServiceTest {
 
     @Test
     void should_test_calculate(){
+
         IncomeCalculateParameters incomeCalculateParameters = new IncomeCalculateParameters();
         incomeCalculateParameters.setTimeUnit(TimeUnitEnum.YEARLY);
         incomeCalculateParameters.setStartAmount(1000.00F);
         incomeCalculateParameters.setMonthlyAmount(100.00F);
-        incomeCalculateParameters.setIncomeTax(1.5F);
-        incomeCalculateParameters.setDiscountTaxes(0F);
+        incomeCalculateParameters.setIncomeTax(13.75F);
+        incomeCalculateParameters.setDiscountTaxes(3F);
         incomeCalculateParameters.setInvestingTime(12);
 
-        fixedIncomesTableService.calculate(incomeCalculateParameters);
+        fixedIncomesTableService.calculate(incomeCalculateParameters).forEach(System.out::println);
+
     }
 }
