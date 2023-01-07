@@ -13,7 +13,7 @@ public class MainLeftPanel extends JPanel {
 	}
 
 	private void setup(JFrame jFrame) {
-		setSize((int) Math.round(jFrame.getWidth() * 0.45), jFrame.getHeight());
+		setSize((int) Math.round(jFrame.getWidth() * 0.5), jFrame.getHeight());
 		setVisible(true);
 	}
 	

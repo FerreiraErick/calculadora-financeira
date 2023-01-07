@@ -14,25 +14,18 @@ public class MainRightPanel extends JPanel{
 	
 	public MainRightPanel(JFrame mainFixedIncome) {
 		setup(mainFixedIncome);
-		setPanelLayout();
 		setBody();
 		mainFixedIncome.add(this);
 	}
 
-	private void setPanelLayout() {
-		setLayout(new FlowLayout());
-	}
 
 	private void setBody(){
 		new IncomesTable(this);
 	}
 
 	private void setup(JFrame jFrame) {
-		setLayout(new GridLayout(2, 0));
-		setSize((int) Math.round(jFrame.getWidth() * 0.67), jFrame.getHeight());
-		setAlignmentX(JPanel.RIGHT_ALIGNMENT);
+		setLayout(new GridLayout(2, 1));
 		setVisible(true);
 	}
-	
 
 }

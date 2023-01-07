@@ -5,22 +5,30 @@ import java.awt.*;
 
 public class IncomesTable extends JTable {
 
+    private JPanel tablePane;
+
     public IncomesTable(JPanel jPanel) {
-        setup(jPanel);
         setTable();
+        setup(jPanel);
         jPanel.add(this);
     }
 
     private void setTable() {
-        var table = new JTable(3, 3);
+        var table = new JTable(3,  3);
+        table.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         table.setVisible(true);
-        add(table);
+
+        tablePane = new JPanel();
+        tablePane.setAlignmentY(LEFT_ALIGNMENT);
+        tablePane.add(table);
+        tablePane.setVisible(true);
+
+        add(tablePane);
     }
 
     private void setup(JPanel jPanel){
-        setSize((int) (jPanel.getWidth() * (0.9)), (jPanel.getHeight() / 2));
-        setBackground(Color.green);
-        setLayout(new FlowLayout());
+        setSize(200, 100);
+        setLayout(new GridLayout());
         setVisible(true);
     }
 }

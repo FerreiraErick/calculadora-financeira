@@ -42,8 +42,6 @@ public class MainFixedIncome extends JFrame implements CustomFrame {
 
 	@Override
 	public WindowAdapter windowListener() {
-		// TODO Auto-generated method stub
-		
 		return new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
