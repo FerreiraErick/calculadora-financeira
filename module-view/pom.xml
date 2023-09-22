@@ -8,7 +8,6 @@
         <artifactId>finance-calculator</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
     <groupId>br.com.finance.view</groupId>
     <artifactId>module-view</artifactId>
 

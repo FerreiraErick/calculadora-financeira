@@ -1,7 +1,9 @@
 package br.com.calculadora.screens.home;
 
+import br.com.calculadora.screens.fixedincome.MainFixedIncome;
+import br.com.calculadora.screens.infrastructure.ScreenPool;
+
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
@@ -9,8 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import br.com.screens.fixedincome.MainFixedIncome;
-import br.com.screens.infrastructure.ScreenPool;
 
 public class Home extends JFrame {
 

@@ -1,15 +1,15 @@
 package br.com.calculadora.screens.fixedincome;
 
+import br.com.calculadora.screens.components.CustomFrame;
+import br.com.calculadora.screens.home.Home;
+import br.com.calculadora.screens.infrastructure.ScreenPool;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
-
-import br.com.screens.components.CustomFrame;
-import br.com.screens.home.Home;
-import br.com.screens.infrastructure.ScreenPool;
 
 public class MainFixedIncome extends JFrame implements CustomFrame {
 

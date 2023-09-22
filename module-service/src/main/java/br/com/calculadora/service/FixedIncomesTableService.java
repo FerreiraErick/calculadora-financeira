@@ -1,4 +1,3 @@
-
 /*
  * Erick Victor Ferreira
  * São Paulo, 21/12/2022 12:01
@@ -6,8 +5,8 @@
 
 package br.com.calculadora.service;
 
-import br.com.domains.IncomeCalculateParameters;
-import br.com.domains.RowData;
+import br.com.calculadora.domain.IncomeCalculateParameters;
+import br.com.calculadora.domain.RowData;
 
 import java.util.ArrayList;
 import java.util.List;
