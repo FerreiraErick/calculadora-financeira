@@ -1,10 +1,13 @@
 package br.com.calculadora.screens.fixedincome;
 
+import br.com.calculadora.controller.IncomeTaxesController;
+import br.com.calculadora.domain.IncomeCalculateParameters;
 import br.com.calculadora.screens.components.ComboBoxWithLabel;
 import br.com.calculadora.screens.components.FloatFieldWithLabel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -18,18 +21,18 @@ public class FieldTaxesPanel extends JPanel {
     private ComboBoxWithLabel investingTime;
     private CalcularButton calcularButton;
 
-//    private final IncomeTaxesController incomeTaxesController = new IncomeTaxesController();
+    private final IncomeTaxesController incomeTaxesController = new IncomeTaxesController();
 
     public FieldTaxesPanel(JPanel jPanel) {
         setup(jPanel);
         setFields();
-//        setListeners();
+        setListeners();
         jPanel.add(this);
     }
 
-//    private void setListeners() {
-//        calcularButton.addActionListener(calcularEvent);
-//    }
+    private void setListeners() {
+        calcularButton.addActionListener(calculateEvent);
+    }
 
     private void setup(JPanel jPanel) {
         setSize(jPanel.getWidth(), jPanel.getHeight() - 200);
@@ -56,18 +59,19 @@ public class FieldTaxesPanel extends JPanel {
         add(calcularButton);
     }
 
-//    private final ActionListener calcularEvent = event -> {
-//        incomeTaxesController.calculateTaxes(getParameters());
-//    };
+    private final ActionListener calculateEvent = event -> {
+        var response = incomeTaxesController.calculateTaxes(getParameters());
+        System.out.println(response);
+    };
 
-//    private IncomeCalculateParameters getParameters(){
-//        var parameters = new IncomeCalculateParameters();
-//        parameters.setIncomeTax(incomeTax.getFieldContent());
-//        parameters.setStartAmount(startAmount.getFieldContent());
-//        parameters.setMonthlyAmount(monthlyAmount.getFieldContent());
-//        parameters.setDiscountTaxes(discountTaxes.getFieldContent());
-//        parameters.setInvestingTime(investingTime.getFieldContent());
-//        return parameters;
-//    }
+    private IncomeCalculateParameters getParameters(){
+        var parameters = new IncomeCalculateParameters();
+        parameters.setIncomeTax(incomeTax.getFieldContent());
+        parameters.setStartAmount(startAmount.getFieldContent());
+        parameters.setMonthlyAmount(monthlyAmount.getFieldContent());
+        parameters.setDiscountTaxes(discountTaxes.getFieldContent());
+        parameters.setInvestingTime(investingTime.getFieldContent());
+        return parameters;
+    }
 
 }

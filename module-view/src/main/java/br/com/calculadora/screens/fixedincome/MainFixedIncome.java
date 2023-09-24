@@ -12,8 +12,6 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
 public class MainFixedIncome extends JFrame implements CustomFrame {
-
-	private static final long serialVersionUID = 1L;
 	
 	public MainFixedIncome() {
 		setup();
