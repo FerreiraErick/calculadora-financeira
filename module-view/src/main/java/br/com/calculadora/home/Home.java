@@ -1,7 +1,7 @@
-package br.com.calculadora.screens.home;
+package br.com.calculadora.home;
 
-import br.com.calculadora.screens.fixedincome.MainFixedIncome;
-import br.com.calculadora.screens.infrastructure.ScreenPool;
+import br.com.calculadora.fixedincome.MainFixedIncome;
+import br.com.calculadora.infrastructure.ScreenPool;
 
 import java.awt.Dimension;
 import java.awt.event.ActionListener;

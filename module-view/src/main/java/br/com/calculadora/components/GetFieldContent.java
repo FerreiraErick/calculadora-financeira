@@ -1,4 +1,4 @@
-package br.com.calculadora.screens.components;
+package br.com.calculadora.components;
 
 public interface GetFieldContent<T> {
     T getFieldContent();

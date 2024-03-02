@@ -1,11 +1,7 @@
-package br.com.calculadora.screens.components;
-
-import org.jfree.chart.JFreeChart;
+package br.com.calculadora.components;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class ComboBoxWithLabel extends JPanel implements  GetFieldContent<Integer>{
 

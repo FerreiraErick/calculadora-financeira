@@ -1,8 +1,8 @@
-package br.com.calculadora.screens.fixedincome;
+package br.com.calculadora.fixedincome;
 
-import br.com.calculadora.screens.components.CustomFrame;
-import br.com.calculadora.screens.home.Home;
-import br.com.calculadora.screens.infrastructure.ScreenPool;
+import br.com.calculadora.components.CustomFrame;
+import br.com.calculadora.home.Home;
+import br.com.calculadora.infrastructure.ScreenPool;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;

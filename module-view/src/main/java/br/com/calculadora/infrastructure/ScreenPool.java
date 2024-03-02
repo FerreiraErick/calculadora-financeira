@@ -1,4 +1,4 @@
-package br.com.calculadora.screens.infrastructure;
+package br.com.calculadora.infrastructure;
 
 import java.awt.Component;
 import java.util.HashMap;

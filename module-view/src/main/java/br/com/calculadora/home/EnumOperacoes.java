@@ -1,4 +1,4 @@
-package br.com.calculadora.screens.home;
+package br.com.calculadora.home;
 
 import java.util.Arrays;
 import java.util.stream.Stream;

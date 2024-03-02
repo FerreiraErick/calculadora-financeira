@@ -1,16 +1,16 @@
-package br.com.calculadora.screens.fixedincome;
+package br.com.calculadora.fixedincome;
 
 import javax.swing.*;
 
 public class CalcularButton extends JButton {
 
-	public CalcularButton(JPanel jFrame) {
+	public CalcularButton(JComponent jFrame) {
 		super("Calcular");
 		setup(jFrame);
 		jFrame.add(this);
 	}
 
-	private void setup(JPanel jFrame) {
+	private void setup(JComponent jFrame) {
 		setVisible(true);
 	}
 }

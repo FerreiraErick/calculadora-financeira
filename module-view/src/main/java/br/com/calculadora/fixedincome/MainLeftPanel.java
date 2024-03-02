@@ -1,11 +1,10 @@
-package br.com.calculadora.screens.fixedincome;
-
-import java.awt.*;
+package br.com.calculadora.fixedincome;
 
 import javax.swing.*;
 
 public class MainLeftPanel extends JPanel {
-	
+
+	private final FieldTaxesPanel fieldTaxesPanel = new FieldTaxesPanel(this);
 	public MainLeftPanel(JFrame jFrame) {
 		setup(jFrame);
 		setBody();
@@ -18,7 +17,8 @@ public class MainLeftPanel extends JPanel {
 	}
 	
 	private void setBody() {
-		new FieldTaxesPanel(this);
+
 	}
+
 
 }

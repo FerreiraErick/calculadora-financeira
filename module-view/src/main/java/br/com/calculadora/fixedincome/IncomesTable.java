@@ -1,4 +1,4 @@
-package br.com.calculadora.screens.fixedincome;
+package br.com.calculadora.fixedincome;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,6 @@ public class IncomesTable extends JTable {
         table.setVisible(true);
 
         tablePane = new JPanel();
-        tablePane.setAlignmentY(LEFT_ALIGNMENT);
         tablePane.add(table);
         tablePane.setVisible(true);
 

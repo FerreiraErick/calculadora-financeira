@@ -1,4 +1,4 @@
-package br.com.calculadora.screens.home;
+package br.com.calculadora.home;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;

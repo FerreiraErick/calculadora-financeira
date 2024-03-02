@@ -1,11 +1,10 @@
-package br.com.calculadora.screens.fixedincome;
+package br.com.calculadora.fixedincome;
 
 import java.awt.*;
 import java.io.Serial;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
 
 public class MainRightPanel extends JPanel{
 

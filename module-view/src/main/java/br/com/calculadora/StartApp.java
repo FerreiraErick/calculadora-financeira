@@ -1,7 +1,7 @@
 package br.com.calculadora;
 
 
-import br.com.calculadora.screens.home.Home;
+import br.com.calculadora.home.Home;
 
 public class StartApp {
 

@@ -1,9 +1,9 @@
-package br.com.calculadora.screens.fixedincome;
+package br.com.calculadora.fixedincome;
 
 import br.com.calculadora.controller.IncomeTaxesController;
 import br.com.calculadora.domain.IncomeCalculateParameters;
-import br.com.calculadora.screens.components.ComboBoxWithLabel;
-import br.com.calculadora.screens.components.FloatFieldWithLabel;
+import br.com.calculadora.components.ComboBoxWithLabel;
+import br.com.calculadora.components.FloatFieldWithLabel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class FieldTaxesPanel extends JPanel {
+public class FieldTaxesPanel extends JComponent{
 
     private static final int DEFAULT_TEXT_FIELD_SIZE = 10;
     private FloatFieldWithLabel incomeTax;
@@ -61,7 +61,6 @@ public class FieldTaxesPanel extends JPanel {
 
     private final ActionListener calculateEvent = event -> {
         var response = incomeTaxesController.calculateTaxes(getParameters());
-        System.out.println(response);
     };
 
     private IncomeCalculateParameters getParameters(){
@@ -73,5 +72,4 @@ public class FieldTaxesPanel extends JPanel {
         parameters.setInvestingTime(investingTime.getFieldContent());
         return parameters;
     }
-
 }
