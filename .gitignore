@@ -1,3 +1,7 @@
-.idea
-.settings
-/target/
+*.idea
+*.settings
+*.iml
+
+target/
+
+
