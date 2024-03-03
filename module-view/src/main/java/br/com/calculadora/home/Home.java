@@ -1,14 +1,8 @@
 package br.com.calculadora.home;
 
-import br.com.calculadora.components.CustomFrame;
 import br.com.calculadora.infrastructure.ScreenPool;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.lang.reflect.InvocationTargetException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -55,10 +49,9 @@ public class Home extends JFrame {
 
 	private static void createOpInstance(EnumOperacoes op) {
 		try {
-			op.getFrame().getConstructor().newInstance();
-		} catch (NoSuchMethodException | InstantiationException | InvocationTargetException |
-				 IllegalAccessException ex) {
-			throw new RuntimeException(ex);
+			op.getFrameClass().getConstructor().newInstance();
+		} catch (ReflectiveOperationException ex) {
+			throw new RuntimeException("Error on trying to create operation screen instance", ex);
 		}
 	}
 
